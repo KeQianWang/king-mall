@@ -31,3 +31,11 @@ $ npm stop
 
 
 [egg]: https://eggjs.org
+
+
+
+### 增加 egg-swagger-doc
+`npm run dev` 
+之后 
+[http://127.0.0.1:7001/swagger-ui.html#/](访问地址)
+[https://github.com/Yanshijie-EL/egg-swagger-doc](使用说明)

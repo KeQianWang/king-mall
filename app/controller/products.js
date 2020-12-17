@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * @Controller product
+ */
 const Controller = require('egg').Controller;
 
 class ProductController extends Controller {
@@ -8,6 +11,11 @@ class ProductController extends Controller {
         this.ctx.body = '{"product":"unknown","status":"OK"}';
     }
 
+    /**
+     * @Router POST /product
+     * @request body productRequest *body 产品信息
+     * @Response 201 baseResponse ok
+     */
     async create() {
         const { ctx } = this;
         ctx.body = {

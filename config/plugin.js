@@ -13,5 +13,9 @@ module.exports = {
     swaggerdoc: {
         enable: true,
         package: 'egg-swagger-doc'
-    }
+    },
+    mysql:{
+        enable: true,
+        package: 'egg-mysql',
+    },
 };

@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "hjj19881208",
+    "database": "king_mall",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "hjj19881208",
+    "database": "king_mall_unittest",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "hjj19881208",
+    "database": "king_mall_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

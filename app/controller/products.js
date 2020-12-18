@@ -12,7 +12,7 @@ class ProductController extends Controller {
      * @router get /version01/controllers/show （ get 表示设置请求为 get 请求，最后的 selectById 对应下面的 show 方法 ）。
      * @response 200 JsonBody 返回结果。
      */
-    async show(){
+    async show() {
         const ctx = this.ctx; // 当前请求的上下文 Context 对象的实例，通过它我们可以拿到框架封装好的处理当前请求的各种便捷属性和方法。
         const service = this.service; // 应用定义的 Service，通过它我们可以访问到其他业务层，等价于 this.ctx.service 。
 
@@ -25,9 +25,9 @@ class ProductController extends Controller {
     /*
      * 对返回的数据结果进行封装。
      */
-    JsonBody (data) {
+    JsonBody(data) {
         this.ctx.body = {
-            result: data,
+            result: data
         };
     }
 

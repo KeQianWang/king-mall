@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "hjj19881208",
+    "password": "password",
     "database": "king_mall",
     "host": "127.0.0.1",
     "dialect": "mysql"

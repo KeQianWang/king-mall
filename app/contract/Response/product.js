@@ -7,6 +7,9 @@ module.exports = {
     createProductResponse: {
         id: { type: 'integer' }
     },
+    deleteResponse:{
+        id: { type: 'number'}
+    },
     getProductsResponse: {
         limit: { type: 'integer' },
         offset: { type: 'integer' },

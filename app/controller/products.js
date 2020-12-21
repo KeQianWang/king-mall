@@ -22,19 +22,20 @@ class ProductController extends Controller {
         ctx.body = product;
     }
 
+    
+    //参考 https://github.com/Yanshijie-EL/egg-example-api/blob/master/app/controller/user.js
 
     /**
      * @summary 删除产品
      * @description 删除产品
-     * @router delete /api/products/:id
-     * @request body deleteRequest *body 删除信息
-     * @response 204 deleteResponse 删除成功
+     * @router delete /api/products/{id}
+     * @request path string *id
+     * @response 200 deleteResponse 删除成功
      */
     async delete() {
         const {ctx,service} = this;
-        const id = ctx.request.body;
-        const product = await service.product.destroyProduct({ where: id });
-        ctx.status = 204;
+        const id = ctx.params.id;
+        ctx.body = await service.product.destroyProduct(id)
     }
 
 
@@ -56,7 +57,7 @@ class ProductController extends Controller {
             limit,
             offset,
             totalCount: products.count,
-            devices: products.rows
+            products: products.rows
         };
     }
 

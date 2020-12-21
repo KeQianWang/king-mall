@@ -12,6 +12,13 @@ class ProductServices extends Service {
         const product = await this.app.mysql.get('product');
         return product;
     }
+
+    async findProducts(query) {
+        const { ctx } = this;
+        query.order = [[ 'created_at', 'desc' ], [ 'id', 'desc' ]];
+        const found_product = await ctx.model.Product.findAndCountAll(query);
+        return found_product;
+    }
 }
 
 module.exports = ProductServices;

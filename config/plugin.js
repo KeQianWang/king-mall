@@ -21,7 +21,7 @@ module.exports = {
     sequelize: {
         enable: true,
         package: 'egg-sequelize',
-        define:{
+        define: {
             // 主动写入工夫戳 created_at updated_at
             timestamps: true,
             createdAt: 'created_at',

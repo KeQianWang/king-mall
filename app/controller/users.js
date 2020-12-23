@@ -15,8 +15,13 @@ class UsersController extends Controller {
      */
     async create() {
         const ctx = this.ctx;
-        const { name, age } = ctx.request.body;
-        const res = await ctx.model.User.create({ name, age });
+        const { name, age, gender, cellphone } = ctx.request.body;
+        const res = await ctx.model.User.create({
+            name,
+            age,
+            gender,
+            cellphone
+        });
         ctx.status = 201;
         ctx.body = res;
     }

@@ -1,10 +1,7 @@
 'use strict';
 
-const { DATE } = require('sequelize');
-
 module.exports = (app) => {
-    const { STRING, INTEGER, TEXT, DECIMAL, BOOLEAN, DATE } = app.Sequelize;
-
+    const { STRING, INTEGER, TEXT, DECIMAL, BOOLEAN } = app.Sequelize;
     const Product = app.model.define('product', {
         id: { type: INTEGER, primaryKey: true, autoIncrement: true },
         title: STRING,
@@ -19,9 +16,7 @@ module.exports = (app) => {
         is_hot: BOOLEAN,
         is_new: BOOLEAN,
         is_on_sale: BOOLEAN,
-        sort_order: INTEGER,
-        created_at: DATE,
-        updated_at: DATE
+        sort_order: INTEGER
     });
 
     return Product;

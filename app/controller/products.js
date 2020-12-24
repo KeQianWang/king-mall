@@ -6,7 +6,6 @@
 const Controller = require('egg').Controller;
 
 class ProductController extends Controller {
-
     /**
      * @summary 创建产品
      * @description 创建产品
@@ -16,13 +15,40 @@ class ProductController extends Controller {
      */
     async create() {
         const ctx = this.ctx;
-        const { name, desc } = ctx.request.body;
-        const product = await ctx.model.Product.create({ name, desc });
+        const {
+            title,
+            category,
+            pic_url,
+            detail,
+            primary_pic_url,
+            price,
+            exclusive_price,
+            volume,
+            sell_volume,
+            is_hot,
+            is_new,
+            is_on_sale,
+            sort_order
+        } = ctx.request.body;
+        const product = await ctx.model.Product.create({
+            title,
+            category,
+            pic_url,
+            detail,
+            primary_pic_url,
+            price,
+            exclusive_price,
+            volume,
+            sell_volume,
+            is_hot,
+            is_new,
+            is_on_sale,
+            sort_order
+        });
         ctx.status = 201;
         ctx.body = product;
     }
 
-    
     //参考 https://github.com/Yanshijie-EL/egg-example-api/blob/master/app/controller/user.js
 
     /**
@@ -33,11 +59,10 @@ class ProductController extends Controller {
      * @response 200 deleteResponse 删除成功
      */
     async delete() {
-        const {ctx,service} = this;
+        const { ctx, service } = this;
         const id = ctx.params.id;
-        ctx.body = await service.product.destroyProduct(id)
+        ctx.body = await service.product.destroyProduct(id);
     }
-
 
     /**
      * @summary 获取产品列表
@@ -60,7 +85,6 @@ class ProductController extends Controller {
             products: products.rows
         };
     }
-
 }
 
 module.exports = ProductController;

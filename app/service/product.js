@@ -12,7 +12,7 @@ class ProductServices extends Service {
         const { ctx } = this;
         query.order = [
             ['createdAt', 'desc'],
-            ['id', 'desc'],
+            ['id', 'desc']
         ];
         const found_product = await ctx.model.Product.findAndCountAll(query);
         return found_product;

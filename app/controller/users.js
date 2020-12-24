@@ -9,8 +9,8 @@ class UsersController extends Controller {
     /**
      * @summary 创建用户
      * @description 创建创建用户
-     * @router POST /api/users
-     * @request body userRequest *body 产品信息
+     * @router POST /api/users/create
+     * @request body userRequest *body 用户信息
      * @response 201 createUserResponse 创建成功
      */
     async create() {

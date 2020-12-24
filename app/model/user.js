@@ -8,8 +8,8 @@ module.exports = (app) => {
         age: INTEGER,
         gender: STRING,
         cellphone: STRING,
-        createdAt: DATE,
-        updatedAt: DATE
+        created_at: DATE,
+        updated_at: DATE
     });
     return User;
 };

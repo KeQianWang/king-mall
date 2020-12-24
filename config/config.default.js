@@ -3,7 +3,7 @@
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
-module.exports = appInfo => {
+module.exports = (appInfo) => {
     /**
      * built-in config
      * @type {Egg.EggAppConfig}
@@ -15,7 +15,6 @@ module.exports = appInfo => {
 
     // add your middleware config here
     config.middleware = [];
-
 
     config.security = {
         csrf: {
@@ -48,7 +47,18 @@ module.exports = appInfo => {
         port: 3306,
         username: 'root',
         password: 'password',
-        database: 'king_mall'
+        database: 'king_mall',
+        define: {
+            // 主动写入工夫戳 created_at updated_at
+            timestamps: true,
+            // createdAt: 'created_at',
+            // updatedAt: 'updated_at',
+            // 字段生成软删除工夫戳 deleted_at
+            // paranoid: true,
+            // deletedAt: 'deleted_at',
+            // 所有驼峰命名格式化
+            underscored: false
+        }
     };
 
     config.swaggerdoc = {
@@ -58,26 +68,25 @@ module.exports = appInfo => {
             description: 'swagger-ui for egg',
             version: '1.0.0'
         },
-        schemes: [ 'http', 'https' ],
-        consumes: [ 'application/json' ],
-        produces: [ 'application/json' ],
-        securityDefinitions:
-            {
-                // apikey: {
-                //   type: 'apiKey',
-                //   name: 'clientkey',
-                //   in: 'header',
-                // },
-                // oauth2: {
-                //   type: 'oauth2',
-                //   tokenUrl: 'http://petstore.swagger.io/oauth/dialog',
-                //   flow: 'password',
-                //   scopes: {
-                //     'write:access_token': 'write access_token',
-                //     'read:access_token': 'read access_token',
-                //   },
-                // },
-            },
+        schemes: ['http', 'https'],
+        consumes: ['application/json'],
+        produces: ['application/json'],
+        securityDefinitions: {
+            // apikey: {
+            //   type: 'apiKey',
+            //   name: 'clientkey',
+            //   in: 'header',
+            // },
+            // oauth2: {
+            //   type: 'oauth2',
+            //   tokenUrl: 'http://petstore.swagger.io/oauth/dialog',
+            //   flow: 'password',
+            //   scopes: {
+            //     'write:access_token': 'write access_token',
+            //     'read:access_token': 'read access_token',
+            //   },
+            // },
+        },
         enableSecurity: false,
         // enableValidate: true,
         routerMap: false,

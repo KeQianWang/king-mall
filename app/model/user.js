@@ -7,9 +7,7 @@ module.exports = (app) => {
         name: STRING(30),
         age: INTEGER,
         gender: STRING,
-        cellphone: STRING,
-        created_at: DATE,
-        updated_at: DATE
+        cellphone: STRING
     });
     return User;
 };

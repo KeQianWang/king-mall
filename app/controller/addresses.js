@@ -39,6 +39,19 @@ class AddressesController extends Controller {
         ctx.status = 201;
         ctx.body = res;
     }
+
+    /**
+     * @summary 删除用户收获地址
+     * @description 删除用户收获地址
+     * @router delete /api/addresses/delete/{id}
+     * @request path string *id
+     * @response 200 deleteResponse 删除成功
+     */
+    async delete() {
+        const { ctx, service } = this;
+        const id = ctx.params.id;
+        ctx.body = await service.address.deleteAddress(id);
+    }
 }
 
 module.exports = AddressesController;

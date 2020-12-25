@@ -10,5 +10,8 @@ module.exports = {
         postcode: { type: 'string', description: '邮编' },
         detail: { type: 'string', description: '详细地址' },
         userId: { type: 'integer', description: '用户ID' }
+    },
+    deleteRequest: {
+        id: { type: 'json', required: true, description: 'id' }
     }
 };

@@ -2,6 +2,6 @@
 
 module.exports = {
     createUserResponse: {
-        id: { type: 'integer' },
-    },
+        id: { type: 'integer' }
+    }
 };
